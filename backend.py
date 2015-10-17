@@ -1,16 +1,31 @@
-from flask import Flask, request, redirect
+from flask import Flask, request, redirect, send_from_directory
 import requests
 import json
 import jinja2
 import os
 import pymysql
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='')
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 db = pymysql.connect(host='localhost', passwd='seedling', user='root', db='Seedling')
+
+@app.route('/js/<path:path>')
+def send_js(path):
+    print "sending js"
+    return send_from_directory('js', path)
+
+@app.route('/css/<path:path>')
+def send_css(path):
+    print "sending css"
+    return send_from_directory('css', path)
+
+@app.route('/pics/<path:path>')
+def send_jpg(path):
+	print "sending jpg"
+	return send_from_directory('pics', path)
 
 @app.route("/")
 def index():
