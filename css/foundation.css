@@ -2058,7 +2058,7 @@ meta.foundation-mq-topbar {
 
 @media only screen and (min-width: 40.063em) {
   .top-bar {
-    background: #333333;
+    background: #47B28F;
     overflow: visible; }
     .top-bar:before, .top-bar:after {
       content: " ";
@@ -2078,7 +2078,7 @@ meta.foundation-mq-topbar {
       position: relative;
       top: 7px; }
     .top-bar.expanded {
-      background: #333333; }
+      background: #47B28F; }
 
   .contain-to-grid .top-bar {
     max-width: 62.5rem;
