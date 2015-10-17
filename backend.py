@@ -47,10 +47,10 @@ def project():
 	template = JINJA_ENVIRONMENT.get_template('project.html')
 	return template.render()
 
-@app.route("/get_home_data", methods=['POST'])
+@app.route("/get_home_data", methods=['GET', 'POST'])
 def get_home_data():
 	cursor = db.cursor()
-	sql = "SELECT * FROM Everything"
+	sql = "SELECT * FROM Everything INNER JOIN Temp ON Everything.TeamID=Temp.TeamID"
 	cursor.execute(sql)
 	rows = [i for i in cursor]
 	output = {}
