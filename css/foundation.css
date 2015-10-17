@@ -1810,7 +1810,8 @@ meta.foundation-mq-topbar {
         color: white;
         width: 75%;
         display: block;
-        padding: 0 15px; }
+        padding: 0 15px;
+        background: #47B28F !important }
   .top-bar .toggle-topbar {
     position: absolute;
     right: 0;
