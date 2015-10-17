@@ -18,13 +18,13 @@ def index():
 	return template.render()
 
 @app.route("/profileView")
-def home():
+def profileView():
 	template = JINJA_ENVIRONMENT.get_template('profileView.html')	
 	return template.render()
 
-@app.route("/profile")
-def profile():
-	template = JINJA_ENVIRONMENT.get_template('profile.html')
+@app.route("/project")
+def project():
+	template = JINJA_ENVIRONMENT.get_template('project.html')
 	return template.render()
 
 @app.route("/get_home_data")
