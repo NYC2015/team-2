@@ -86,15 +86,42 @@
      }
 
 
-
-    function createQuestionPanel() {
+     $.ajax({
+      url:'/get_home_data',
+      type: 'POST',
+      dataType: 'json',
+      success: function(data,status){
+        results = data;
+        console.log(results);
         var div = $('<div class="panel" style="background: rgb(245,245,245);">');
-        for(var i=0; i<10; i++) {
-          $('<div class="panel"><p>Student '+String(i)+'</p></div>').appendTo(div);
+        for (team in data){
+          numberOfGroups++;
+          currentTeam = data[team];
+          var rankNum = parseInt(team)+1;
+          console.log(rankNum);
+          if (rankNum==1){
+            $('<div class="panel" id= "'+ rankNum +'"><h4>Team ' + rankNum + ". " +currentTeam[0][0] +", "+ currentTeam[1][0] +", "+ currentTeam[2][0]</h4></div>).appendTo(div);
+
+          }
+          else {
+            $('<div class="panel" id= "' + rankNum +'"><h4>Team ' + rankNum + ". " +currentTeam[0][0]+", "+ currentTeam[1][0] </h4></div>).appendTo(div);
+          }
         }
-        return div;
-      }
-      $('body').append(createQuestionPanel());
+        $('body').append(createQuestionPanel());
+
+        }
+      })
+
+
+
+    // function createQuestionPanel() {
+    //     var div = $('<div class="panel" style="background: rgb(245,245,245);">');
+    //     for(var i=0; i<10; i++) {
+    //       $('<div class="panel"><p>Student '+String(i)+'</p></div>').appendTo(div);
+    //     }
+    //     return div;
+    //   }
+    //   $('body').append(createQuestionPanel());
 
 
      </script>
