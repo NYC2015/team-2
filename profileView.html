@@ -29,13 +29,13 @@
               <ul class="dropdown">
                   <ul class="button-group" id="filterButtons">
                   <li>
-                    <a class="button secondary" id="timeSort"> Home </a>            
+                    <a class="button secondary" id="homeDirect"> Home </a>            
                   </li>
                   <li>
-                    <a class="button secondary" id="waitSort"> Profile </a>            
+                    <a class="button secondary" id="profileDirect"> Profile </a>            
                   </li>
                   <li>
-                    <a class="button secondary" id="travelSort"> Travel </a>            
+                    <a class="button secondary" id="travelDirect"> Travel </a>            
                   </li>
           </ul>
               </ul>
@@ -45,19 +45,13 @@
         
           <ul class="button-group" id="filterButtons">
             <li>
-              <a class="button secondary" id="timeSort"> Total Time </a>            
+              <a class="button secondary" id="homeDirect"> Home </a>            
             </li>
             <li>
-              <a class="button secondary" id="waitSort"> Wait </a>            
+              <a class="button secondary" id="profileDirect"> Profile </a>            
             </li>
             <li>
-              <a class="button secondary" id="travelSort"> Travel </a>            
-            </li>
-            <li>
-              <a class="button secondary" id="qualitySort"> Quality </a>            
-            </li>
-            <li>
-              <a class="button secondary" id="normalSort">Overall</a>            
+              <a class="button secondary" id="travelDirect"> Travel </a>            
             </li>
           </ul>
         </ul>
@@ -75,11 +69,28 @@
 
      <script>
 
+     $('#homeDirect').click(home_onClick);
+     $('#profileDirect').click();
+     $('#travelDirect').click();
+
+     function home_onClick(){
+      window.location.href= "/";
+     }
+
+     function profile_onClick(){
+      window.location.href= "/profileView";
+     }
+
+     function travel_onClick(){
+      window.location.href= "/project";
+     }
+
+
 
     function createQuestionPanel() {
         var div = $('<div class="panel" style="background: rgb(245,245,245);">');
         for(var i=0; i<10; i++) {
-          $('<div class="panel"><p>Test '+String(i)+'</p></div>').appendTo(div);
+          $('<div class="panel"><p>Student '+String(i)+'</p></div>').appendTo(div);
         }
         return div;
       }
