@@ -29,3 +29,25 @@
 .top-bar-wrapper {
 	background-color: green;
 }
+
+#projectTitle {
+	font-size: 1.8rem;
+	color: black;
+	text-align: center;
+    font-weight: 300;
+	margin-left: 22%;
+	margin-right: 22%;
+}
+
+#mission {
+	font-size: 1.3rem;
+	color: black;
+	text-align: center;
+    font-weight: 200;
+	margin-left: 22%;
+	margin-right: 22%;
+}
+
+#tonyScale {
+	max-width:50%;
+}
