@@ -42,7 +42,7 @@ def project():
 	template = JINJA_ENVIRONMENT.get_template('project.html')
 	return template.render()
 
-@app.route("/get_home_data")
+@app.route("/get_home_data", methods=['POST'])
 def get_home_data():
 	cursor = db.cursor()
 	sql = "SELECT * FROM Everything"
@@ -55,7 +55,7 @@ def get_home_data():
 		output[row[2]].append(row)
 	return json.dumps(output)
 		 
-@app.route("/videos")
+@app.route("/videos", methods=['POST'])
 def get_videos():
 	cursor = db.cursor()
 	sql = "SELECT * FROM Videos"
@@ -63,9 +63,7 @@ def get_videos():
 	rows = [i for i in cursor]
 	output = {}
 	for row in rows:
-		if row[0] not in output:
-			output[row[0]] = []
-		output[row[0]].append(row)
+		output[row[0]] = row
 	return json.dumps(output)
 #@app.route("/fhirbaes", methods=['GET', 'POST'])
 #def fhirFight():
