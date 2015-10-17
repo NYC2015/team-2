@@ -30,6 +30,21 @@ h1, h2, h3, h4, h5, h6, p {
 	background: rgb(245,245,245);
 }
 
+#button1{
+	width: 50%;
+	margin: 0 auto;
+}
+
+#button2{
+	width: 50%;
+	margin: 0 auto;
+}
+
+#button3{
+	width: 50%;
+	margin: 0 auto;
+}
+
 #explanation {
 	font-size: 1.8rem;
 	color: white;
