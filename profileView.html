@@ -77,9 +77,9 @@
 
 
     function createQuestionPanel() {
-        var div = $('<div class="panel">');
+        var div = $('<div class="panel" style="background: rgb(245,245,245);">');
         for(var i=0; i<10; i++) {
-          $('<div class="panel">top div</div>').appendTo(div);
+          $('<div class="panel"><p>Test '+String(i)+'</p></div>').appendTo(div);
         }
         return div;
       }
