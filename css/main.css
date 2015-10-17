@@ -7,6 +7,7 @@ h1, h2, h3, h4, h5, h6, p {
 	
 }
 
+
 #title {
 	color: white;
 	text-align: center;
@@ -42,6 +43,10 @@ h1, h2, h3, h4, h5, h6, p {
 
 .top-bar-wrapper {
 	background-color: green;
+}
+
+.top-bar-section{
+	background: #47B28F;
 }
 
 #projectTitle {

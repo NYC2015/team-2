@@ -23,19 +23,19 @@
 
 
       <section class="top-bar-section">
-        <ul class="right hide-for-large-up">
+        <ul class="right">
            <li class="has-dropdown">
               <a href="#" style="padding-left 30px !important;">Menu</a>
               <ul class="dropdown">
                   <ul class="button-group" id="filterButtons">
                   <li>
-                    <a class="button secondary" id="homeDirect"> Home </a>            
+                    <a href="/" class="button secondary" id="homeDirect"> Home </a>            
                   </li>
                   <li>
-                    <a class="button secondary" id="profileDirect"> Profile </a>            
+                    <a href="/profileView" class="button secondary" id="profileDirect"> Profile </a>            
                   </li>
                   <li>
-                    <a class="button secondary" id="travelDirect"> Travel </a>            
+                    <a href="/project" class="button secondary" id="travelDirect"> Travel </a>            
                   </li>
           </ul>
               </ul>
@@ -54,22 +54,22 @@
     <script src="js/foundation/foundation.topbar.js"></script>
 
      <script>
-     function home_onClick(){
-      window.location.href= "/";
-     }
+     // function home_onClick(){
+     //  window.location.href= "/";
+     // }
 
-     function profile_onClick(){
-      window.location.href= "/profileView";
-     }
+     // function profile_onClick(){
+     //  window.location.href= "/profileView";
+     // }
 
-     function travel_onClick(){
-      window.location.href= "/project";
-     }
+     // function travel_onClick(){
+     //  window.location.href= "/project";
+     // }
 
 
-     $('#homeDirect').click(home_onClick);
-     $('#profileDirect').click(profile_onClick);
-     $('#travelDirect').click(travel_onClick);
+     // $('#homeDirect').click(home_onClick);
+     // $('#profileDirect').click(profile_onClick);
+     // $('#travelDirect').click(travel_onClick);
 
 
      $.ajax({
