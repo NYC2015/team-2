@@ -12,6 +12,11 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     autoescape=True)
 db = pymysql.connect(host='localhost', passwd='seedling', user='root', db='Seedling')
 
+@app.route('/videos/<path:path>')
+def send_videos(path):
+	print "sending videos"
+	return send_from_directory('videos', path)
+
 @app.route('/js/<path:path>')
 def send_js(path):
     print "sending js"
