@@ -52,7 +52,7 @@
     <script src="js/foundation.min.js"></script>
     <script src="js/foundation/foundation.reveal.js"></script>
     <script src="js/foundation/foundation.topbar.js"></script>
-
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js"></script>
      <script>
      // function home_onClick(){
      //  window.location.href= "/";
@@ -84,7 +84,17 @@
           currentTeam = data[team];
           var rankNum = parseInt(team)+1;
           if (rankNum==1){
-            $('<div class="panel" id= "'+ rankNum +'"><h4 style="font-weight: 500">Team ' + rankNum + ": " +currentTeam[0][5]+'</h4><h5 style="font-weight: 300">'+currentTeam[0][0] +' '+ currentTeam[0][1]+", "+ currentTeam[1][0] +' '+ currentTeam[1][1]+", "+ currentTeam[2][0]+' '+ currentTeam[2][1] +'</h5><video width="300" height="200" controls><source src=videos/video0.mp4 type="video/mp4"></video><p style="font-style: oblique; font-weight:300">Hook: '+currentTeam[0][3]+'</p> <a href="/project" class="button" style="background-color:#47B28F; border-color:#21B9A4;width: 164px;padding-left: 32px;margin-left: 0px;left: 80px;">Click for Details</a></div>').appendTo(div);
+            $('<div class="panel" id= "'+ rankNum +'"><h4 style="font-weight: 500">Team ' + rankNum + ": " +currentTeam[0][5]+'</h4><h5 style="font-weight: 300">'+currentTeam[0][0] +' '+ currentTeam[0][1]+", "+ currentTeam[1][0] +' '+ currentTeam[1][1]+", "+ currentTeam[2][0]+' '+ currentTeam[2][1] +'</h5><video width="300" height="200" controls><source src=videos/video0.mp4 type="video/mp4"></video><p style="font-style: oblique; font-weight:300">Hook: '+currentTeam[0][3]+
+'</p><div class="row">'+
+	'<div class="small-8 columns">'+
+		'<a href="/" class="button" style="background-color:#47B28F; border-color:#21B9A4;width: 164px;padding-left:;margin-left:px;left:;">Click for Details</a>'+
+	'</div>'+
+	'<div class="small-4 columns">'+
+		'<img id="img0" onclick="inc0" src="pics/1445099003_arrow-up.svg">'+
+	'</div>'+
+		'</div>'+
+		'<p id="tag0" style="margin-left: 269px;">0</p>'+
+'</div></div>').appendTo(div);
 
           }
           else if(rankNum==2){
@@ -94,13 +104,23 @@
 		'<a href="/" class="button" style="background-color:#47B28F; border-color:#21B9A4;width: 164px;padding-left:;margin-left:px;left:;">Click for Details</a>'+
 	'</div>'+
 	'<div class="small-4 columns">'+
-		'<img src="pics/1445099003_arrow-up.svg">'+
+		'<img id="img1" src="pics/1445099003_arrow-up.svg">'+
 	'</div>'+
 		'</div>'+
-		'<p id="tag1">0</p>'+
+		'<p id="tag1" style="margin-left: 269px;">0</p>'+
 '</div></div>').appendTo(div);
           }
-          else{$('<div class="panel" id= "'+ rankNum +'"><h4 style="font-weight: 500">Team ' + rankNum + ": " +currentTeam[0][5]+'</h4><h5 style="font-weight: 300">'+currentTeam[0][0] +' '+ currentTeam[0][1]+", "+ currentTeam[1][0] +' '+ currentTeam[1][1]+'</h5><video width="300" height="200" controls><source src=videos/video2.mp4 type="video/mp4"></video><p style="font-style: oblique; font-weight:300">Hook: '+currentTeam[0][3]+'</p><a href="/" class="button" style="background-color:#47B28F; border-color:#21B9A4;width: 164px;padding-left: 32px;margin-left: 0px;left: 80px;">Click for Details</a></div>').appendTo(div);
+          else{$('<div class="panel" id= "'+ rankNum +'"><h4 style="font-weight: 500">Team ' + rankNum + ": " +currentTeam[0][5]+'</h4><h5 style="font-weight: 300">'+currentTeam[0][0] +' '+ currentTeam[0][1]+", "+ currentTeam[1][0] +' '+ currentTeam[1][1]+'</h5><video width="300" height="200" controls><source src=videos/video2.mp4 type="video/mp4"></video><p style="font-style: oblique; font-weight:300">Hook: '+currentTeam[0][3]+
+'</p><div class="row">'+
+	'<div class="small-8 columns">'+
+		'<a href="/" class="button" style="background-color:#47B28F; border-color:#21B9A4;width: 164px;padding-left:;margin-left:px;left:;">Click for Details</a>'+
+	'</div>'+
+	'<div class="small-4 columns">'+
+		'<img id="img2" src="pics/1445099003_arrow-up.svg">'+
+	'</div>'+
+		'</div>'+
+		'<p id="tag2" style="margin-left: 269px;">0</p>'+
+'</div></div>').appendTo(div);
 
           }
         }
@@ -108,7 +128,13 @@
 
         }
 
-      })
+      });
+	
+      function inc0() {
+         var cur = parseInt($('#tag0').val());
+	$('#tag0').text(cur+1);	
+      }
+
 
 
 
