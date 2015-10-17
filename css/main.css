@@ -8,20 +8,24 @@
 	}
 
 #aboutBackground {
-    background-image: url("background.jpg");
+    background-image: url("../background.jpg");
     background-repeat: no-repeat;
-    background-position: top;
+    background-position: -1900px -1100px;
     margin-top: -53px;
-    height: 765px;
+    height: 1080px;
 }
 
 #explanation {
-		font-size: 1.8rem;
-		color: white;
-		text-align: center;
-        font-weight: 300;
-        text-shadow: 1px 1px 5px grey;
-		margin-left: 22%;
-		margin-right: 22%;
-		margin-top: 150px;
+	font-size: 1.8rem;
+	color: white;
+	text-align: center;
+    font-weight: 300;
+    text-shadow: 1px 1px 5px grey;
+	margin-left: 22%;
+	margin-right: 22%;
+	margin-top: 150px;
 	}
+
+#loginButton {
+
+}
