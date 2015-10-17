@@ -4,8 +4,10 @@ import json
 import jinja2
 import os
 import pymysql
+from flask.ext.socketio import SocketIO, emit
 
 app = Flask(__name__, static_url_path='')
+socketio = SocketIO(app)
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
     extensions=['jinja2.ext.autoescape'],
@@ -70,6 +72,21 @@ def get_videos():
 	for row in rows:
 		output[row[0]] = row
 	return json.dumps(output)
+
+@socketio.on('emitUpvote', namespace='/upvote')
+def test_message(message):
+    cursor = db.cursor()
+    teamid = message["TeamID"]
+    sql = "SELECT * FROM Temp WHERE TeamID={teamid}".format(**locals())
+    cursor.execute(sql)
+    rows = [i for i in cursor]
+    newCount = rows[0][1] + 1
+    cursor2 = db.cursor()
+    sql2 = "UPDATE Temp SET UpvoteCounter={newCount} WHERE TeamID={teamid}".format(**locals())
+    cursor2.execute(sql2)
+    print teamid + " " + newCount
+    emit('emitUpvote', {teamid: newCount})
+
 #@app.route("/fhirbaes", methods=['GET', 'POST'])
 #def fhirFight():
 #	print "==========="
@@ -79,4 +96,4 @@ def get_videos():
 
 if __name__ == "__main__":
 	port = int(os.environ.get('PORT', 5000))
-    	app.run(host='0.0.0.0', port=port, debug=True)
+    	socketio.run(app, host='0.0.0.0', port=port)
