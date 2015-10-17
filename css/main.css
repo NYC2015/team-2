@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .top-bar-section{
-	background: #47B28F;
+	background: #47B28F !important;
 }
 
 #projectTitle {
