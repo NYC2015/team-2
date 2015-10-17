@@ -1,0 +1,31 @@
+#title {
+	color: white;
+	text-align: center;
+    text-shadow: 1px 1px 5px grey;
+	font-size: 7rem !important;
+	height: 1.125rem;
+    font-weight: 300;
+	}
+
+#aboutBackground {
+    background-image: url("../background.jpg");
+    background-repeat: no-repeat;
+    background-position: -1900px -1100px;
+    margin-top: -53px;
+    height: 1080px;
+}
+
+#explanation {
+	font-size: 1.8rem;
+	color: white;
+	text-align: center;
+    font-weight: 300;
+    text-shadow: 1px 1px 5px grey;
+	margin-left: 22%;
+	margin-right: 22%;
+	margin-top: 150px;
+	}
+
+.top-bar-wrapper {
+	background-color: green;
+}

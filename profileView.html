@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/foundation.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr.js"></script>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+
+        <title>Profile View</title>
+    </head>
+    <body>
+
+      <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/">Seedling</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon">
+          <a href="#"><span>Menu</span></a>
+        </li>
+      </ul>
+
+
+      <section class="top-bar-section">
+        <ul class="right hide-for-large-up">
+           <li class="has-dropdown">
+              <a href="#" style="padding-left 30px !important;">Menu</a>
+              <ul class="dropdown">
+                  <ul class="button-group" id="filterButtons">
+                  <li>
+                    <a class="button secondary" id="timeSort"> Home </a>            
+                  </li>
+                  <li>
+                    <a class="button secondary" id="waitSort"> Profile </a>            
+                  </li>
+                  <li>
+                    <a class="button secondary" id="travelSort"> Travel </a>            
+                  </li>
+          </ul>
+              </ul>
+          </li>
+        </ul>
+        <ul class="right show-for-large-up">
+        
+          <ul class="button-group" id="filterButtons">
+            <li>
+              <a class="button secondary" id="timeSort"> Total Time </a>            
+            </li>
+            <li>
+              <a class="button secondary" id="waitSort"> Wait </a>            
+            </li>
+            <li>
+              <a class="button secondary" id="travelSort"> Travel </a>            
+            </li>
+            <li>
+              <a class="button secondary" id="qualitySort"> Quality </a>            
+            </li>
+            <li>
+              <a class="button secondary" id="normalSort">Overall</a>            
+            </li>
+          </ul>
+        </ul>
+      </section>
+      </nav> 
+    </div>
+
+     </body>  
+
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/fastclick.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/foundation/foundation.reveal.js"></script>
+    <script src="js/foundation/foundation.topbar.js"></script>
+
+     <script>
+
+
+    function createQuestionPanel() {
+        var div = $('<div class="panel">');
+        for(var i=0; i<10; i++) {
+          $('<div class="panel">top div</div>').appendTo(div);
+        }
+        return div;
+      }
+      $('body').append(createQuestionPanel());
+
+
+     </script>
+
+
+
+</html>
