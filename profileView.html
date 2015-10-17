@@ -25,24 +25,18 @@
       <section class="top-bar-section">
         <ul class="right hide-for-large-up">
            <li class="has-dropdown">
-              <a href="#" style="padding-left 30px !important;">Filter Results</a>
+              <a href="#" style="padding-left 30px !important;">Menu</a>
               <ul class="dropdown">
                   <ul class="button-group" id="filterButtons">
-            <li>
-              <a class="button secondary" id="timeSort"> Total Time </a>            
-            </li>
-            <li>
-              <a class="button secondary" id="waitSort"> Wait </a>            
-            </li>
-            <li>
-              <a class="button secondary" id="travelSort"> Travel </a>            
-            </li>
-            <li>
-              <a class="button secondary" id="qualitySort"> Quality </a>            
-            </li>
-            <li>
-              <a class="button secondary" id="normalSort">Overall</a>            
-            </li>
+                  <li>
+                    <a class="button secondary" id="timeSort"> Home </a>            
+                  </li>
+                  <li>
+                    <a class="button secondary" id="waitSort"> Profile </a>            
+                  </li>
+                  <li>
+                    <a class="button secondary" id="travelSort"> Travel </a>            
+                  </li>
           </ul>
               </ul>
           </li>
@@ -71,71 +65,29 @@
       </nav> 
     </div>
 
-
-
-        <div id="aboutBackground">
-            <div style="height:50px">
-            </div>
-            <h1 id="route">Grassroots</h1>
-            <p id="explanation"> Build and grow your business project!</p>
-            <div class="large-3 large-centered columns">
-
-            
-            <div class="login-box">
-            <div class="row">
-            <div class="large-12 columns">
-              <form>
-                 <div class="row">
-                   <div class="large-12 columns">
-                       <input type="text" name="username" placeholder="Username" />
-                   </div>
-                 </div>
-                <div class="row">
-                   <div class="large-12 columns">
-                       <input type="password" name="password" placeholder="Password" />
-                   </div>
-                </div>
-                <div class="row">
-                  <div class="large-12 large-centered columns">
-                    <input type="submit" class="button expand" value="Log In"/>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-          </div>
-          </div>
-
-
-            <form data-abide="ajax" id="location_form" style="position: relative; bottom: 0px"> 
-                <div class="row">
-                    <div class="small-5 columns addressFields">
-                      <input type="text" id="address" placeholder="address">
-                    </div>
-                    <div class="small-2 columns addressFields">
-                      <input type="text" id="city" placeholder="city">
-                      <small class="error">City is required.</small>
-                    </div>
-                    <div class="small-1 columns addressFields">
-                      <input type="text" id="state" placeholder="state">
-                      <small class="error">State is required.</small>
-                    </div>
-                    <div class="small-2 columns addressFields">
-                      <input type="text" id="zip" placeholder="zip">
-                      <small class="error">Zip Code is required.</small>
-                      </div>
-                      <div> <button class="small-2 radius small submit" type="submit" value="Submit">Search</button>
-                      </div>
-                </div>
-            </form>
-
-            <p id="disclaimer"> Information provided is for educational purposes only and is not intended as a replacement for emergency services. 
-            </p>
-        </div>
-     
-          <hr class="line">
-          </hr>
      </body>  
+
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/fastclick.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/foundation/foundation.reveal.js"></script>
+    <script src="js/foundation/foundation.topbar.js"></script>
+
+     <script>
+
+
+    function createQuestionPanel() {
+        var div = $('<div class="panel">');
+        for(var i=0; i<10; i++) {
+          $('<div class="panel">top div</div>').appendTo(div);
+        }
+        return div;
+      }
+      $('body').append(createQuestionPanel());
+
+
+     </script>
+
 
 
 </html>
