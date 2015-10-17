@@ -12,15 +12,38 @@
         <title>Seedling</title>
     </head>
     <body>
-        <div id="top-bar-wrapper" class="sticky fixed top">
-            <nav class="top-bar" data-topbar role="navigation">
-            <ul class="title-area">
-                <li class="name">
-                    <h1 class="menuItem"> <a href="/">Seedling</a></h1>
-                </li>
-            </ul>
-            </nav> 
-        </div>
+        <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <h1 style="background: #47B28F !important"><a href="/" style="background: #47B28F !important">Seedling</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon">
+          <a href="#" style="background: #47B28F !important"><span>Menu</span></a>
+        </li>
+      </ul>
+
+
+      <section class="top-bar-section">
+        <ul class="right show-for-small-up !important">
+           <li class="has-dropdown">
+              <a href="#" style="padding-left 30px !important; background: #47B28F !important">Menu</a>
+              <ul class="dropdown">
+                  <ul class="button-group" id="filterButtons">
+                  <li>
+                    <a href="/" class="button secondary" id="homeDirect"> Home </a>            
+                  </li>
+                  <li>
+                    <a href="/profileView" class="button secondary" id="profileDirect"> Profile </a>            
+                  </li>
+                  <li>
+                    <a href="/project" class="button secondary" id="travelDirect"> Travel </a>            
+                  </li>
+          </ul>
+              </ul>
+          </li>
+        </ul>
+      </section>
+      </nav> 
 
 
 
