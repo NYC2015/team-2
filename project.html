@@ -31,6 +31,26 @@
 
         var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
         chart.draw(data, options);
+
+
+        function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses'],
+          ['2004',  1000,      400],
+          ['2005',  1170,      460],
+          ['2006',  660,       1120],
+          ['2007',  1030,      540]
+        ]);
+
+        var options = {
+          title: 'Company Performance',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
       }
 
     </script>
@@ -109,7 +129,14 @@
           </div>
 
        <div class="row">
-        <div id="donutchart" style="width: 700px; height: 300px; margin-top:120px;"></div>
+       <div class="large-6 columns"
+          <div id="donutchart" style="width: 700px; height: 300px; margin-top:120px;"></div>
+        </div>
+        
+
+        <div class="large-6 columns">
+            <div id="curve_chart" style="width: 700px; height: 300px; margin-top:120px;"></div>
+        </div>
         </div>
 
   </body>  
