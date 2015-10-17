@@ -68,11 +68,6 @@
     <script src="js/foundation/foundation.topbar.js"></script>
 
      <script>
-
-     $('#homeDirect').click(home_onClick);
-     $('#profileDirect').click(profile_onClick);
-     $('#travelDirect').click(travel_onClick);
-
      function home_onClick(){
       window.location.href= "/";
      }
@@ -84,6 +79,11 @@
      function travel_onClick(){
       window.location.href= "/project";
      }
+
+
+     $('#homeDirect').click(home_onClick);
+     $('#profileDirect').click(profile_onClick);
+     $('#travelDirect').click(travel_onClick);
 
 
      $.ajax({
