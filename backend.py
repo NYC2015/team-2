@@ -2,32 +2,35 @@ from flask import Flask, request, redirect
 import requests
 import json
 import jinja2
+import os
 
-@app.route("/", methods=['GET', 'POST'])
+app = Flask(__name__)
+JINJA_ENVIRONMENT = jinja2.Environment(
+    loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
+    extensions=['jinja2.ext.autoescape'],
+    autoescape=True)
+
+@app.route("/")
 def index():
-	pass
+	template = JINJA_ENVIRONMENT.get_template('index.html')
+	return template.render()
 
-@app.route("/home", methods['GET', 'POST'])
+@app.route("/home")
 def home():
-	pass
+	template = JINJA_ENVIRONMENT.get_template('home.html')	
+	return template.render()
 
-@app.route("/profile", methods['GET', 'POST'])
+@app.route("/profile")
 def profile():
-	pass
+	template = JINJA_ENVIRONMENT.get_template('profile.html')
+	return template.render()
 
-
-@app.route("/home", methods['GET', 'POST'])
-
-@app.route("/home", methods['GET', 'POST'])
-
-@app.route("/home", methods['GET', 'POST'])
-
-@app.route("/fhirbaes", methods=['GET', 'POST'])
-def fhirFight():
-	print "==========="
-	print request
-	print request.values
-	return "yolo"
+#@app.route("/fhirbaes", methods=['GET', 'POST'])
+#def fhirFight():
+#	print "==========="
+#	print request
+#	print request.values
+#	return "yolo"
 
 if __name__ == "__main__":
 	app.run(debug=True)
