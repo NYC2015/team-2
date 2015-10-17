@@ -25,6 +25,11 @@ def profile():
 	template = JINJA_ENVIRONMENT.get_template('profile.html')
 	return template.render()
 
+@app.route("/get_home_data")
+def get_home_data():
+
+	return 
+
 #@app.route("/fhirbaes", methods=['GET', 'POST'])
 #def fhirFight():
 #	print "==========="
