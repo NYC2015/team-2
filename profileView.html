@@ -102,7 +102,7 @@
 
           }
           else {
-            $('<div class="panel" id= "' + rankNum +'"><h4>Team ' + rankNum + ": " +currentTeam[0][0]+", "+ currentTeam[1][0]+'  </h4></div>').appendTo(div);
+            $('<div class="panel" id= "'+ rankNum +'"><h4>Team ' + rankNum + " " +currentTeam[0][5]+'</h4><h5>'+currentTeam[0][0] +' '+ currentTeam[0][1]+", "+ currentTeam[1][0] +' '+ currentTeam[1][1]+'</h5><p>Hook: '+currentTeam[0][3]+'</p><p>Click for Details</p></div>').appendTo(div);
           }
         }
         $('body').append(div);
