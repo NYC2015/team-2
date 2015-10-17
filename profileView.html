@@ -98,17 +98,7 @@
           currentTeam = data[team];
           var rankNum = parseInt(team)+1;
           if (rankNum==1){
-            $('<div class="panel" id= "'+ rankNum +'"><h4>Team ' + rankNum + ". " +currentTeam[0][0] +", "+ currentTeam[1][0] +", "+ currentTeam[2][0]+ '</h4></div>').appendTo(div);
-            $.ajax({
-            url:'/videos',
-            type: 'POST',
-            dataType: 'json',
-            success: function(data2,status){
-              videos = data2
-              video=videos[0]
-              $('<div class="panel" id= "' + rankNum +'1"><video width="320" height="240" controls><source src="'+video+ '".mp4 type="video/mp4"></video</div>').appendTo(div);
-            }
-          })
+            $('<div class="panel" id= "'+ rankNum +'"><h4>Team ' + rankNum + ". " +currentTeam[0][0] +", "+ currentTeam[1][0] +", "+ currentTeam[2][0]+ '</h4><video width="320" height="240" controls><source src=videos/team0.mp4 type="video/mp4"></video></div>').appendTo(div);
 
           }
           else {
