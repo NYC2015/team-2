@@ -87,8 +87,8 @@
             $('<div class="panel" id= "'+ rankNum +'"><h4>Team ' + rankNum + " " +currentTeam[0][5]+'</h4><h5>'+currentTeam[0][0] +' '+ currentTeam[0][1]+", "+ currentTeam[1][0] +' '+ currentTeam[1][1]+", "+ currentTeam[2][0]+' '+ currentTeam[2][1] +'</h5><video width="300" height="200" controls><source src=videos/video0.mp4 type="video/mp4"></video><p>Hook: '+currentTeam[0][3]+'</p><p>Click for Details</p></div>').appendTo(div);
 
           }
-          else {
-            $('<div class="panel" id= "'+ rankNum +'"><h4>Team ' + rankNum + " " +currentTeam[0][5]+'</h4><h5>'+currentTeam[0][0] +' '+ currentTeam[0][1]+", "+ currentTeam[1][0] +' '+ currentTeam[1][1]+'</h5><p>Hook: '+currentTeam[0][3]+'</p><p>Click for Details</p></div>').appendTo(div);
+          else if(rankNum==2){
+            $('<div class="panel" id= "'+ rankNum +'"><h4>Team ' + rankNum + " " +currentTeam[0][5]+'</h4><h5>'+currentTeam[0][0] +' '+ currentTeam[0][1]+", "+ currentTeam[1][0] +' '+ currentTeam[1][1]+'</h5><video width="300" height="200" controls><source src=videos/video1.mov type="video/mov"><p>Hook: '+currentTeam[0][3]+'</p><p>Click for Details</p></div>').appendTo(div);
           }
         }
         $('body').append(div);
