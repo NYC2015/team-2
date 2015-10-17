@@ -79,12 +79,173 @@
         
         <div class="row">
           <div class="large-12 columns">
-          <h3 style="text-align: center;">About Us</h3>
+          <h3 style="text-align: left;">About Us</h3>
           <p>Every year, millions of forgetful partners have to face their significant others' disappointment when they come home empty-handed. We want to provide a gift service where anyone can borrow one of our Cupid Delivery Couriers to get them a gift before heading home. No need to leave work or panic when we're on the case!</p>
           </div>
+
+          <script>
+        //THIS IS FOR THE PANEL
+        $(document).ready(function(){
+          $('#waitH6').append('<h6 class="sub-headline" style="float: right;">(404) 851-8000</h6><img src="/phone.png" style="width: 1rem; height: 1rem; margin-top: 4px; margin-right: 0.5rem; float: right;"></h6>');
+        });
+        $('#homePanel').click(function(){
+            var $panel = $(this);
+            if($panel.hasClass('selected_result')) {
+              $panel.removeClass('selected_result');
+              $('#clickForDetails').text('Click Panel For Details');
+              $('.tabs').css({'display':'none'});
+              $('.selected').css({'display':'none'});
+              $(window).trigger('resize');
+            } else {
+              $panel.addClass("selected_result");
+              $('#results').css({"overflow": "hidden", "margin-bottom": "10px"});
+              $('#clickForDetails').text('Click Panel To Hide Details');
+              $('.tabs').css({'display':''});
+              $('.selected').css({'display':''});
+              $(window).trigger('resize');
+            }
+        });
+
+        $('.insuranceButton').click(function(e){
+          e.stopPropagation();
+          $('.selectedButton').removeClass('selectedButton');
+          $('.selected').css({'display':'none'}).removeClass('selected');
+          $('#insuranceDiv').css({'display':''}).addClass('selected');
+          $('.insuranceButton').addClass('selectedButton');
+          $(window).trigger('resize');
+        });
+        $('.waitTimeButton').click(function(e) {
+          e.stopPropagation();
+          $('.selectedButton').removeClass('selectedButton');
+          $('.selected').css({'display':'none'}).removeClass('selected');
+          $('#waitTimeDiv').css({'display':''}).addClass('selected');
+          $('.waitTimeButton').addClass('selectedButton');
+          $(window).trigger('resize');
+        });
+        $('.qualityButton').click(function(e){
+          e.stopPropagation();
+          $('.selectedButton').removeClass('selectedButton');
+          $('.selected').css({'display':'none'}).removeClass('selected');
+          $('#qualityDiv').css({'display':''}).addClass('selected');
+          $('.qualityButton').addClass('selectedButton');
+          $(window).trigger('resize');
+        });
+        $('#timeContainer').highcharts({
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: 'Wait Time Metrics'
+            },
+            subtitle: {
+                text: 'Lower is Better'
+            },
+            colors: ['#7cb5ec','#90ed7d','#F08A24'],
+            xAxis: {
+                categories: ['Saw a Doctor', 'Sent Home', 'Broken Bones', 'Stroke'],
+                title: {
+                    text: null
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: '',
+                labels: {
+                    overflow: 'justify'
+                }
+            },
+            plotOptions: {
+                bar: {
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            legend: {
+                layout: 'horizontal',
+                align: 'right',
+                verticalAlign: 'top',
+                y:50,
+                floating: false,
+                borderWidth: 1,
+                backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+                shadow: true
+            },
+            credits: {
+                enabled: false
+            },
+            series: [{
+                name: 'State Average',
+                data: [20, 147, 64, 47]
+            }, {
+                name: 'Nearby Hospitals',
+                data: [59,196,66,21]
+            }, {
+                name: 'This Hospital',
+                data: [16,145,44,0]
+            }]
+          });
+          $('#qualityContainer').highcharts({
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: 'Quality Metrics'
+            },
+            subtitle: {
+                text: 'Lower is Better'
+            },
+            colors: ['#7cb5ec','#90ed7d','#F08A24'],
+            xAxis: {
+                categories: ['CAUTI', 'CDIFF', 'CLASBI', 'MRSA', 'SSI1', 'SSI2'],
+                title: {
+                    text: null
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text:null
+                },
+                labels: {
+                    overflow: 'justify'
+                }
+            },
+            plotOptions: {
+                bar: {
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            legend: {
+                layout: 'horizontal',
+                align: 'right',
+                verticalAlign: 'top',
+                y: 50,
+                floating: false,
+                borderWidth: 1,
+                backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+                shadow: true
+            },
+            credits: {
+                enabled: false
+            },
+            series: [{
+                name: 'State Average',
+                data: [1.058,0.656,0.666,1.168,0.81,1.016]
+            }, {
+                name: 'Nearby Hospitals',
+                data: [1.351,0.879,0.599,0.92,0.633,1.065]
+            }, {
+                name: 'This Hospital',
+                data: [0.838,0.877,0.18,0.52,0.394,0.508]
+            }]
+        });
+        </script>
         </div>
 
-        
+
      
     <div class="row">
         <div class="large-12 columns">
